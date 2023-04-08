@@ -20,6 +20,10 @@ source=("${_pkgname}-${pkgver}.exe::http://download.mikrotik.com/winbox/${pkgver
         "${_pkgname}.desktop"
         "${_pkgname}.png"
         "${_pkgname}")
+sha256sums=('SKIP'
+            'SKIP'
+            'SKIP'
+            'SKIP')
 
 package() {
   install -Dm755 "${srcdir}/${_pkgname}-${pkgver}.exe" "${pkgdir}/opt/${_pkgname}/${_pkgname}.exe"
