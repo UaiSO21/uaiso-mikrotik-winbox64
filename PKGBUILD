@@ -2,7 +2,8 @@
 # Contributor: Tom Hetmer <tom.hetmer / outlook.cz>
 # Contributor: Daniel Milde <daniel / milde.cz>
 
-pkgname=winbox64
+pkgname=uaiso-mikrotik-winbox64
+_pkgname=winbox64
 pkgver=3.37
 pkgrel=1
 pkgdesc="Mikrotik RouterOS GUI Configurator. 64-bit version for use with wine"
@@ -14,16 +15,16 @@ makedepends=('xdg-utils')
 optdepends=(
   'ttf-ms-fonts: for better fonts'
 )
-install=${pkgname}.install
-source=("${pkgname}-${pkgver}.exe::http://download.mikrotik.com/winbox/${pkgver}/${pkgname}.exe"
-        "${pkgname}.desktop"
-        "${pkgname}.png"
-        "${pkgname}")
+install=${_pkgname}.install
+source=("${_pkgname}-${pkgver}.exe::http://download.mikrotik.com/winbox/${pkgver}/${_pkgname}.exe"
+        "${_pkgname}.desktop"
+        "${_pkgname}.png"
+        "${_pkgname}")
 sha256sums=('SKIP')
 
 package() {
-  install -Dm755 "${srcdir}/${pkgname}-${pkgver}.exe" "${pkgdir}/opt/${pkgname}/${pkgname}.exe"
-  install -Dm755 "${srcdir}/${pkgname}" "${pkgdir}/usr/bin/${pkgname}"
-  install -Dm655 "${srcdir}/${pkgname}.png" "${pkgdir}/usr/share/pixmaps/${pkgname}.png"
-  install -Dm655 "${srcdir}/${pkgname}.desktop" "${pkgdir}/usr/share/applications/${pkgname}.desktop"
+  install -Dm755 "${srcdir}/${_pkgname}-${pkgver}.exe" "${pkgdir}/opt/${_pkgname}/${_pkgname}.exe"
+  install -Dm755 "${srcdir}/${_pkgname}" "${pkgdir}/usr/bin/${_pkgname}"
+  install -Dm655 "${srcdir}/${_pkgname}.png" "${pkgdir}/usr/share/pixmaps/${_pkgname}.png"
+  install -Dm655 "${srcdir}/${_pkgname}.desktop" "${pkgdir}/usr/share/applications/${_pkgname}.desktop"
 }
